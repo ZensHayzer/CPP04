@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 00:28:15 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/29 11:35:14 by ajeanne          ###   ########.fr       */
+/*   Created: 2023/07/11 15:54:46 by ajeanne           #+#    #+#             */
+/*   Updated: 2023/07/11 18:43:13 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef __ANIMAL_HPP__
-#define __ANIMAL_HPP__
+#include "Brain.hpp"
 
-#include <iostream>
+Brain::Brain()	{
+	std::cout << "A brain has spawned." << std::endl;
+}
 
-class Animal	{
+Brain::Brain(const Brain & src)	{
+	for (int i = 0; i < 100; i++)
+		_ideas[i] = src.getIdeas(i);
 	
-	public:
-		Animal();
-		Animal(std::string type);
-		Animal(std::string type, std::string sound);
-		Animal(const Animal & src);
-		~Animal();
-		Animal &operator=(const Animal & src);
-		
-		std::string	getType() const;
+	return;
+}
 
-		void	makeSound()	const;
-		
-	protected:
-		std::string	_type;
-		std::string	_sound;
-};
+Brain::~Brain()	{
+	std::cout << "A brain has disapeard." << std::endl;
+	
+	return;
+}
 
-#endif
+std::string	Brain::getIdeas(int i) const	{
+	return _ideas[i];
+}

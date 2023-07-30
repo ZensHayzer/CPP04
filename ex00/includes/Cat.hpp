@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 01:15:20 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/11 01:16:07 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/07/29 12:17:55 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,9 @@ class Cat : public Animal	{
 	
 	public:
 		Cat();
-		Cat(std::string type);
 		Cat(const Cat & src);
 		~Cat();
-
-		void	makeSound()	const;
-
+		Cat &operator=(const Cat & src);
 };
 
 #endif

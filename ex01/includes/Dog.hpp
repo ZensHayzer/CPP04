@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 00:28:15 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/29 11:35:14 by ajeanne          ###   ########.fr       */
+/*   Created: 2023/07/11 00:48:14 by ajeanne           #+#    #+#             */
+/*   Updated: 2023/07/30 10:23:57 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __ANIMAL_HPP__
-#define __ANIMAL_HPP__
+#ifndef __DOG_HPP__
+#define __DOG_HPP__
 
 #include <iostream>
+#include "Animal.hpp"
 
-class Animal	{
+class Dog : public Animal	{
 	
 	public:
-		Animal();
-		Animal(std::string type);
-		Animal(std::string type, std::string sound);
-		Animal(const Animal & src);
-		~Animal();
-		Animal &operator=(const Animal & src);
+		Dog();
+		Dog(const Dog & src);
+		~Dog();
 		
-		std::string	getType() const;
+		Dog &operator=(const Dog & src);
+		virtual Animal &operator=(const Animal & src);
 
-		void	makeSound()	const;
+		virtual Brain	*getBrain() const;
 		
-	protected:
-		std::string	_type;
-		std::string	_sound;
+	private:
+		Brain	*_brain;
+		
 };
 
 #endif

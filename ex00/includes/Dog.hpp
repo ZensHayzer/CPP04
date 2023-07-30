@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 00:48:14 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/11 01:13:07 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/07/29 12:17:50 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,9 @@ class Dog : public Animal	{
 	
 	public:
 		Dog();
-		Dog(std::string type);
 		Dog(const Dog & src);
 		~Dog();
-
-		void	makeSound()	const;
-
+		Dog &operator=(const Dog & src);
 };
 
 #endif

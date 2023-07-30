@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 14:33:28 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/29 11:34:30 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/07/30 10:20:02 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,37 @@
 #include "WrongCat.hpp"
 
 int	main(void)	{
-	Animal	manu("Rat");
-	Dog		shanley;
-	Cat		clem;
-	WrongAnimal	fabrice("Dindonus Tirectus");
-	WrongCat	jose;
+	Animal			manu("Rat", "Squick Squick");
+	Dog				shanley;
+	Cat				clem;
+	WrongAnimal		fabrice("Dindonus Tirectus");
+	WrongCat		jose;
+	Animal			*petShop[10];
+	const Animal		*johnny;
+	const Animal		*maurice;
+	
+	johnny = new Dog();
+	maurice = new Cat();
+	
+	for (int i = 0; i < 5; i++)	{
+		petShop[i] = new Dog();
+	}
+	
+	for (int i = 5; i < 10; i++)	{
+		petShop[i] = new Cat();
+	}
+	
+	std::cout << "\nTests petShop\n" << std::endl;
+	std::cout << petShop[1]->getType() << std::endl;
+	petShop[1]->makeSound();
+	std::cout << petShop[6]->getType() << std::endl;
+	petShop[6]->makeSound();
+
+	std::cout << "\nTests Maurice / Johnny\n" << std::endl;	
+	std::cout << maurice->getType() << std::endl;
+	maurice->makeSound();
+	std::cout << johnny->getType() << std::endl;
+	johnny->makeSound();
 	
 	std::cout << "\nReal animals : Animal / Dog / Cat\n" << std::endl;
 	std::cout << manu.getType() << std::endl;
@@ -38,6 +64,13 @@ int	main(void)	{
 	jose.makeSound();
 
 	std::cout << std::endl;
+	
+	for (int i = 0; i < 10; i++)	{
+		delete petShop[i];
+	}
+
+	delete maurice;
+	delete johnny;
 	
 	return 0;
 }

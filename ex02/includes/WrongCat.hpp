@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 00:28:15 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/29 11:35:14 by ajeanne          ###   ########.fr       */
+/*   Created: 2023/07/11 01:44:17 by ajeanne           #+#    #+#             */
+/*   Updated: 2023/07/11 01:56:05 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __ANIMAL_HPP__
-#define __ANIMAL_HPP__
+#ifndef __WRONGCAT_HPP__
+#define __WRONGCAT_HPP__
 
 #include <iostream>
+#include "WrongAnimal.hpp"
 
-class Animal	{
+class WrongCat : public WrongAnimal	{
 	
 	public:
-		Animal();
-		Animal(std::string type);
-		Animal(std::string type, std::string sound);
-		Animal(const Animal & src);
-		~Animal();
-		Animal &operator=(const Animal & src);
-		
-		std::string	getType() const;
+		WrongCat();
+		WrongCat(std::string type);
+		WrongCat(const WrongCat & src);
+		~WrongCat();
 
 		void	makeSound()	const;
-		
-	protected:
-		std::string	_type;
-		std::string	_sound;
+
 };
 
 #endif

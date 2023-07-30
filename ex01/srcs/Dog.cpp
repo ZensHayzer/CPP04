@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 01:15:32 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/29 12:33:55 by ajeanne          ###   ########.fr       */
+/*   Created: 2023/07/11 00:48:37 by ajeanne           #+#    #+#             */
+/*   Updated: 2023/07/30 10:18:31 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat(): Animal("Cat", "MIAOUUUUUUU")	{
-	std::cout << "You create a Cat !" << std::endl;
+Dog::Dog(): Animal("Dog", "WOUAFFFFFFF"), _brain(new Brain())	{
+	std::cout << "You create a dog !" << std::endl;
 	
 	return;
 }
 
-Cat::Cat(const Cat & src)	{
-	std::cout << "You copied a Cat !" << std::endl;
+Dog::Dog(const Dog & src)	{
+	std::cout << "You copied a dog !" << std::endl;
 	*this = src;
 	
 	return;
 }
 
-Cat::~Cat()	{
-	std::cout << "You deleted a Cat !" << std::endl;
+Dog::~Dog()	{
+	delete _brain;
+	std::cout << "You deleted a dog !" << std::endl;
 	
 	return;
 }
 
-Cat	&Cat::operator=(const Cat & src)	{
-	if (this != &src)	{
-		_type = src._type;
-		_sound = src._sound;
-	}
-	return (*this);
+Animal	&Animal::operator=(const Animal & src)	{
+	_type = src._type;
+	_sound = src._type;
+	return *this;
+}
+
+Brain	*Dog::getBrain() const	{
+	return _brain;
 }

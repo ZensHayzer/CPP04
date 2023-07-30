@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 01:44:17 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/11 01:56:05 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/07/29 12:18:12 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,9 @@ class WrongCat : public WrongAnimal	{
 	
 	public:
 		WrongCat();
-		WrongCat(std::string type);
 		WrongCat(const WrongCat & src);
 		~WrongCat();
-
-		void	makeSound()	const;
-
+		WrongCat &operator=(const WrongCat & src);
 };
 
 #endif
