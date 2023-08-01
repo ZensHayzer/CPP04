@@ -12,7 +12,7 @@
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat(): WrongAnimal("WrongCat")	{
+WrongCat::WrongCat(): WrongAnimal("WrongCat", "MIAOUCHHHHHHH*menti*")	{
 	std::cout << "You create a WrongCat *g menti* !" << std::endl;
 	
 	return;
@@ -29,4 +29,12 @@ WrongCat::~WrongCat()	{
 	std::cout << "You deleted a WrongCat *g menti* !" << std::endl;
 	
 	return;
+}
+
+WrongCat	&WrongCat::operator=(const WrongCat & src)	{
+	if (this != &src)	{
+		_type = src._type;
+		_sound = src._sound;
+	}
+	return (*this);
 }

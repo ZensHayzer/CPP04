@@ -32,11 +32,19 @@ Dog::~Dog()	{
 	return;
 }
 
-Animal	&Animal::operator=(const Animal & src)	{
-	_type = src._type;
-	_sound = src._type;
-	return *this;
+Dog	&Dog::operator=(const Dog & src)	{
+	if (this != &src)	{
+		_type = src._type;
+		_brain = src.getBrain();
+	}
+	return (*this);
 }
+
+// Animal	&Animal::operator=(const Animal & src)	{
+// 	_type = src._type;
+// 	_sound = src._type;
+// 	return *this;
+// }
 
 Brain	*Dog::getBrain() const	{
 	return _brain;

@@ -25,7 +25,7 @@ class Cat : public Animal	{
 		~Cat();
 		
 		Cat &operator=(const Cat & src);
-		virtual Animal &operator=(const Animal & src);
+		// virtual Animal &operator=(const Animal & src);
 		
 		virtual Brain	*getBrain() const;
 

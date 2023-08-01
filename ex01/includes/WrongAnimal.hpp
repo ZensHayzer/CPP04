@@ -20,7 +20,7 @@ class WrongAnimal	{
 	
 	public:
 		WrongAnimal();
-		WrongAnimal(std::string type);
+		WrongAnimal(std::string type, std::string sound);
 		WrongAnimal(const WrongAnimal & src);
 		~WrongAnimal();
 		WrongAnimal &operator=(const WrongAnimal & src);

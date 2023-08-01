@@ -12,13 +12,13 @@
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(): _type("Urluberlue")	{
+WrongAnimal::WrongAnimal(): _type("Urluberlue"), _sound("BLBLBLBLBLBLBLBLBLBBLBLBBL")	{
 	std::cout << "You created an WrongAnimal *g menti* !" << std::endl;
 
 	return;
 }
 
-WrongAnimal::WrongAnimal(std::string type): _type(type)	{
+WrongAnimal::WrongAnimal(std::string type, std::string sound): _type(type), _sound(sound)	{
 	std::cout << "You created an WrongAnimal *g menti* !" << std::endl;
 	
 	return;
@@ -35,6 +35,12 @@ WrongAnimal::~WrongAnimal()	{
 	std::cout << "You deleted an WrongAnimal *g menti* !" << std::endl;
 	
 	return;
+}
+
+WrongAnimal	&WrongAnimal::operator=(const WrongAnimal & src)	{
+	_type = src._type;
+	_sound = src._sound;
+	return (*this);
 }
 
 std::string	WrongAnimal::getType() const	{

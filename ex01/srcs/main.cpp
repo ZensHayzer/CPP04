@@ -15,11 +15,6 @@
 #include "WrongCat.hpp"
 
 int	main(void)	{
-	Animal			manu("Rat", "Squick Squick");
-	Dog				shanley;
-	Cat				clem;
-	WrongAnimal		fabrice("Dindonus Tirectus");
-	WrongCat		jose;
 	Animal			*petShop[10];
 	const Animal		*johnny;
 	const Animal		*maurice;
@@ -46,22 +41,6 @@ int	main(void)	{
 	maurice->makeSound();
 	std::cout << johnny->getType() << std::endl;
 	johnny->makeSound();
-	
-	std::cout << "\nReal animals : Animal / Dog / Cat\n" << std::endl;
-	std::cout << manu.getType() << std::endl;
-	std::cout << shanley.getType() << std::endl;
-	std::cout << clem.getType() << std::endl;
-
-	std::cout << "\nWrong animals : Animal / Cat\n" << std::endl;
-	std::cout << fabrice.getType() << std::endl;
-	std::cout << jose.getType() << std::endl;
-	
-	std::cout << "\nAnimals are making sounds : Animal / Dog / Cat / Wrong Animal / Wrong Cat\n" << std::endl;
-	manu.makeSound();
-	shanley.makeSound();
-	clem.makeSound();
-	fabrice.makeSound();
-	jose.makeSound();
 
 	std::cout << std::endl;
 	
