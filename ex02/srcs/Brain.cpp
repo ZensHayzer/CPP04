@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:54:46 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/11 18:43:13 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/07/29 12:31:49 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ Brain::Brain()	{
 }
 
 Brain::Brain(const Brain & src)	{
-	for (int i = 0; i < 100; i++)
-		_ideas[i] = src.getIdeas(i);
+	*this = src;
 	
 	return;
 }
@@ -29,6 +28,10 @@ Brain::~Brain()	{
 	return;
 }
 
-std::string	Brain::getIdeas(int i) const	{
-	return _ideas[i];
+Brain	&Brain::operator=(const Brain & src)	{
+	if (this != &src)	{
+		for (int i = 0; i < 100; i++)
+			ideas[i] = ideas[i];
+	}
+	return (*this);
 }

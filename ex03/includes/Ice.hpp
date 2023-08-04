@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 01:15:20 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/03 12:55:27 by ajeanne          ###   ########.fr       */
+/*   Created: 2023/08/03 13:16:18 by ajeanne           #+#    #+#             */
+/*   Updated: 2023/08/03 13:35:14 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __CAT_HPP__
-#define __CAT_HPP__
+#ifndef ICE_HPP
+#define ICE_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "AMateria.hpp"
 
-class Cat : public Animal	{
-	
+class Ice : public AMateria	{
 	public:
-		Cat();
-		Cat(const Cat & src);
-		~Cat();
-		
-		Cat &operator=(const Cat & src);
-		
-		virtual Brain	*getBrain() const;
+		Ice();
+		Ice(Ice const & src);
+		~Ice();
 
-	private:
-		Brain	*_brain;
-
+		Ice	&operator=(const Ice & src);
+		
+		virtual AMateria* clone() const;
+		virtual void use(ICharacter& target);
 };
 
 #endif

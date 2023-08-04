@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:54:32 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/11 18:42:53 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/07/29 11:00:08 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,9 @@ class Brain	{
 		Brain();
 		Brain(const Brain & src);
 		~Brain();
+		Brain &operator=(const Brain & src);
 
-		std::string getIdeas(int i) const;
-
-	private:
-		std::string	_ideas[100];
+		std::string	ideas[100];
 };
 
 #endif

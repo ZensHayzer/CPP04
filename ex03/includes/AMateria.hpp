@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 01:15:20 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/03 12:55:27 by ajeanne          ###   ########.fr       */
+/*   Created: 2023/08/03 13:12:19 by ajeanne           #+#    #+#             */
+/*   Updated: 2023/08/03 13:39:46 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __CAT_HPP__
-#define __CAT_HPP__
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include "ICharacter.hpp"
 
-class Cat : public Animal	{
-	
+class AMateria
+{
 	public:
-		Cat();
-		Cat(const Cat & src);
-		~Cat();
+		AMateria();
+		AMateria(std::string const & type);
+		virtual ~AMateria();
 		
-		Cat &operator=(const Cat & src);
+		AMateria	&operator=(const AMateria & src);
+		std::string const & getType() const;
 		
-		virtual Brain	*getBrain() const;
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 
-	private:
-		Brain	*_brain;
-
+	protected:
+		std::string _type;
 };
 
 #endif

@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 01:15:20 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/03 12:55:27 by ajeanne          ###   ########.fr       */
+/*   Created: 2023/08/03 13:12:48 by ajeanne           #+#    #+#             */
+/*   Updated: 2023/08/03 13:21:11 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __CAT_HPP__
-#define __CAT_HPP__
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include "AMateria.hpp"
 
-class Cat : public Animal	{
-	
+class ICharacter
+{
 	public:
-		Cat();
-		Cat(const Cat & src);
-		~Cat();
-		
-		Cat &operator=(const Cat & src);
-		
-		virtual Brain	*getBrain() const;
-
-	private:
-		Brain	*_brain;
-
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif

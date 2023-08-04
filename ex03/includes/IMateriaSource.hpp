@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 01:15:20 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/03 12:55:27 by ajeanne          ###   ########.fr       */
+/*   Created: 2023/08/03 13:14:07 by ajeanne           #+#    #+#             */
+/*   Updated: 2023/08/03 13:20:34 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __CAT_HPP__
-#define __CAT_HPP__
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include "AMateria.hpp"
 
-class Cat : public Animal	{
-	
+class IMateriaSource
+{
 	public:
-		Cat();
-		Cat(const Cat & src);
-		~Cat();
-		
-		Cat &operator=(const Cat & src);
-		
-		virtual Brain	*getBrain() const;
-
-	private:
-		Brain	*_brain;
-
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 #endif

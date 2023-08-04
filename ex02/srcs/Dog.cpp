@@ -6,26 +6,21 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 00:48:37 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/28 10:25:07 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/07/30 10:18:31 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(): Animal("Dog"), _brain(new Brain())	{
+Dog::Dog(): Animal("Dog", "WOUAFFFFFFF"), _brain(new Brain())	{
 	std::cout << "You create a dog !" << std::endl;
 	
 	return;
 }
 
-Dog::Dog(std::string type): Animal(type), _brain(new Brain())	{
-	std::cout << "You create a dog !" << std::endl;
-	
-	return;
-}
-
-Dog::Dog(const Dog & src): Animal(src.getType()), _brain(src.getBrain())	{
+Dog::Dog(const Dog & src)	{
 	std::cout << "You copied a dog !" << std::endl;
+	*this = src;
 	
 	return;
 }
@@ -37,12 +32,20 @@ Dog::~Dog()	{
 	return;
 }
 
-Brain	*Dog::getBrain() const	{
-	return _brain;
+Dog	&Dog::operator=(const Dog & src)	{
+	if (this != &src)	{
+		_type = src._type;
+		_brain = src.getBrain();
+	}
+	return (*this);
 }
 
-void	Dog::makeSound() const	{
-	std::cout << "WOUUUUUUUUUUUAF !" << std::endl;
-	
-	return;
+// Animal	&Animal::operator=(const Animal & src)	{
+// 	_type = src._type;
+// 	_sound = src._type;
+// 	return *this;
+// }
+
+Brain	*Dog::getBrain() const	{
+	return _brain;
 }
