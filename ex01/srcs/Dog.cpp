@@ -40,12 +40,6 @@ Dog	&Dog::operator=(const Dog & src)	{
 	return (*this);
 }
 
-// Animal	&Animal::operator=(const Animal & src)	{
-// 	_type = src._type;
-// 	_sound = src._type;
-// 	return *this;
-// }
-
 Brain	*Dog::getBrain() const	{
 	return _brain;
 }

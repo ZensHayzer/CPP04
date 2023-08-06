@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 14:16:01 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/03 14:41:28 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/05 22:06:34 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ Character	&Character::operator=(Character const & src)	{
 			}
 		}
 	}
+
+	return (*this);
 }
 
 std::string	const & Character::getName() const	{
@@ -73,4 +75,18 @@ void	Character::equip(AMateria* m)	{
 	}
 }
 
-void	
+void	Character::unequip(int idx)	{
+	if (idx >= 0 && idx < 4)	{
+		if (bag[idx])	{
+			bag[idx] = NULL;
+		}
+	}
+}
+
+void	Character::use(int idx, ICharacter& target)	{
+	if (idx >= 0 && idx < 4)	{
+		if (bag[idx])	{
+			bag[idx]->use(target);
+		}
+	}
+}

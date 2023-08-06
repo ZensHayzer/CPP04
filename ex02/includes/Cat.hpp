@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 01:15:20 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/03 12:55:27 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/05 22:37:13 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #define __CAT_HPP__
 
 #include "Animal.hpp"
-#include "Brain.hpp"
 
 class Cat : public Animal	{
 	

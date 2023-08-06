@@ -32,12 +32,6 @@ Cat::~Cat()	{
 	return;
 }
 
-// Animal	&Animal::operator=(const Animal & src)	{
-// 	_type = src._type;
-// 	_sound = src._type;
-// 	return *this;
-// }
-
 Cat	&Cat::operator=(const Cat & src)	{
 	if (this != &src)	{
 		_type = src._type;

@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:55:58 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/03 14:26:46 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/05 22:48:09 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
+#include <iostream>
 #include "ICharacter.hpp"
-
+#include "AMateria.hpp"
 
 class Character : public ICharacter	{
 	public:

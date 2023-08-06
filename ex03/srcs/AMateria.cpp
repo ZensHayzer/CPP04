@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:59:09 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/03 13:43:32 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/05 22:16:57 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ std::string const & AMateria::getType() const	{
 }
 
 void	AMateria::use(ICharacter& target)	{
-
+	(void)target;
 }

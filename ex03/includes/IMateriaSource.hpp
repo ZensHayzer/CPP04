@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:14:07 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/03 13:20:34 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/05 22:32:47 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 #include <iostream>
 #include "AMateria.hpp"
+
+class AMateria;
 
 class IMateriaSource
 {

@@ -6,7 +6,7 @@
 #    By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 20:34:23 by ajeanne           #+#    #+#              #
-#    Updated: 2023/08/03 13:50:27 by ajeanne          ###   ########.fr        #
+#    Updated: 2023/08/05 21:56:49 by ajeanne          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,12 @@ vpath %.cpp $(foreach dir, $(SRCS_DIR), $(dir):)
 
 OBJS =	$(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
-SRCS =	AMateria.cpp	\
-		Ice.cpp			\
-		Cure.cpp
+SRCS =	AMateria.cpp		\
+		Ice.cpp				\
+		Cure.cpp			\
+		Character.cpp		\
+		MateriaSource.cpp	\
+		main.cpp
 
 CC =				c++
 CFLAGS =			-Wall -Werror -Wextra -std=c++98 -g3
