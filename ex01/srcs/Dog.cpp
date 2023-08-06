@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 00:48:37 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/30 10:18:31 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/06 03:03:46 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ Dog::~Dog()	{
 Dog	&Dog::operator=(const Dog & src)	{
 	if (this != &src)	{
 		_type = src._type;
+		if (_brain)
+			delete _brain;
 		_brain = src.getBrain();
 	}
 	return (*this);

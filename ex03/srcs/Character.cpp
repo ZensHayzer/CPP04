@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 14:16:01 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/05 22:06:34 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/06 02:59:46 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,23 @@
 #include "Cure.hpp"
 
 Character::Character() : _name("Robert")	{
+	for (int i = 0; i < 4; i++)	{
+		bag[i] = NULL;
+	}
 	
+	for (int i = 0; i < 50; i++)	{
+		_ground[i] = NULL;
+	}
 }
 
 Character::Character(std::string name) : _name(name)	{
+	for (int i = 0; i < 4; i++)	{
+		bag[i] = NULL;
+	}
 	
+	for (int i = 0; i < 50; i++)	{
+		_ground[i] = NULL;
+	}
 }
 
 Character::Character(Character const & src)	{
@@ -27,7 +39,10 @@ Character::Character(Character const & src)	{
 }
 
 Character::~Character()	{
-	
+	for (int i = 0; i < 50; i++)	{
+		if (_ground[i])
+			delete _ground[i];
+	}
 }
 
 Character	&Character::operator=(Character const & src)	{
@@ -70,9 +85,15 @@ void	Character::equip(AMateria* m)	{
 					break;
 				}
 			}
-			break;
+			return;
 		}
 	}
+	for (int j = 0; j < 50; j++)	{
+				if (!_ground[j])	{
+					_ground[j] = m;
+					break;
+				}
+		}
 }
 
 void	Character::unequip(int idx)	{
@@ -89,4 +110,21 @@ void	Character::use(int idx, ICharacter& target)	{
 			bag[idx]->use(target);
 		}
 	}
+}
+
+void    Character::printInventory(void)
+{
+    std::cout << _name << " - Inventory : " << std::endl;
+    for (int i = 0; i < 4; i++)
+    {
+        if (bag[i])
+            std::cout << "[" << i << "]" << bag[i]->getType() << std::endl; 
+    }
+    std::cout << "Floor : " << std::endl;
+    for (int i = 0; i < 10; i++)
+    {
+        if (_ground[i])
+            std::cout << "[" << i << "]" << _ground[i]->getType() << std::endl; 
+    }
+    std::cout << std::endl;
 }

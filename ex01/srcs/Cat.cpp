@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 01:15:32 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/29 13:13:46 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/06 03:03:41 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ Cat::~Cat()	{
 Cat	&Cat::operator=(const Cat & src)	{
 	if (this != &src)	{
 		_type = src._type;
+		if (_brain)
+			delete _brain;
 		_brain = src.getBrain();
 	}
 	return (*this);

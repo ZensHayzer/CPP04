@@ -6,13 +6,13 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:21:23 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/04 18:52:56 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/06 02:27:09 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef ICHARACTER_HPP
-#define ICHARACTER_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
 #include <iostream>
 #include "IMateriaSource.hpp"
