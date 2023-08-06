@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:46:27 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/06 02:42:54 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/06 03:33:34 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ MateriaSource::MateriaSource()  {
 }
 
 MateriaSource::MateriaSource(MateriaSource const & src) {
+    for (int i = 0; i < 4; i++)	{
+		materia[i] = NULL;
+	}
+    
     *this = src;
 }
 

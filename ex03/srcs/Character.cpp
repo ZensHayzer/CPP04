@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 14:16:01 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/06 02:59:46 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/06 03:33:07 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ Character::Character(std::string name) : _name(name)	{
 }
 
 Character::Character(Character const & src)	{
+	for (int i = 0; i < 4; i++)	{
+		bag[i] = NULL;
+	}
+	
+	for (int i = 0; i < 50; i++)	{
+		_ground[i] = NULL;
+	}
 	*this = src;
 }
 
