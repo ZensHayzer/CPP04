@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 12:59:09 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/05 22:16:57 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/27 17:52:25 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ AMateria::AMateria() : _type("default")	{
 
 AMateria::AMateria(std::string const & type) : _type(type)	{
 	
+}
+
+AMateria::AMateria(AMateria const & src)	{
+	if (this != &src)
+		*this = src;
 }
 
 AMateria::~AMateria()	{

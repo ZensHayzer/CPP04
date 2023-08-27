@@ -6,27 +6,29 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 01:44:51 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/29 12:37:32 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/27 17:09:01 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(): _type("Urluberlue"), _sound("BLBLBLBLBLBLBLBLBLBBLBLBBL")	{
+WrongAnimal::WrongAnimal(): _type("Urluberlue")	{
 	std::cout << "You created an WrongAnimal *g menti* !" << std::endl;
 
 	return;
 }
 
-WrongAnimal::WrongAnimal(std::string type, std::string sound): _type(type), _sound(sound)	{
+WrongAnimal::WrongAnimal(std::string type): _type(type)	{
 	std::cout << "You created an WrongAnimal *g menti* !" << std::endl;
 	
 	return;
 }
 
+
 WrongAnimal::WrongAnimal(const WrongAnimal & src)	{
 	std::cout << "You copied an WrongAnimal *g menti* !" << std::endl;
-	*this = src;
+	if (this != &src)
+		*this = src;
 
 	return;
 }
@@ -38,8 +40,9 @@ WrongAnimal::~WrongAnimal()	{
 }
 
 WrongAnimal	&WrongAnimal::operator=(const WrongAnimal & src)	{
-	_type = src._type;
-	_sound = src._sound;
+	if (this != &src)	{
+		_type = src._type;
+	}
 	return (*this);
 }
 
@@ -48,7 +51,7 @@ std::string	WrongAnimal::getType() const	{
 }
 
 void	WrongAnimal::makeSound() const	{
-	std::cout << _sound << std::endl;
+	std::cout << "This \"thing\" don't really talk that much ... *g menti*" << std::endl;
 	
 	return;
 }

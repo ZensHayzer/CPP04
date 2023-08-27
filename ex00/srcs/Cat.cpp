@@ -6,13 +6,13 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 01:15:32 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/29 12:33:55 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/27 16:51:45 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(): Animal("Cat", "MIAOUUUUUUU")	{
+Cat::Cat(): Animal("Cat")	{
 	std::cout << "You create a Cat !" << std::endl;
 	
 	return;
@@ -20,7 +20,8 @@ Cat::Cat(): Animal("Cat", "MIAOUUUUUUU")	{
 
 Cat::Cat(const Cat & src)	{
 	std::cout << "You copied a Cat !" << std::endl;
-	*this = src;
+	if (this != &src)
+		*this = src;
 	
 	return;
 }
@@ -34,7 +35,12 @@ Cat::~Cat()	{
 Cat	&Cat::operator=(const Cat & src)	{
 	if (this != &src)	{
 		_type = src._type;
-		_sound = src._sound;
 	}
 	return (*this);
+}
+
+void	Cat::makeSound() const	{
+	std::cout << "MIAOUUUUUUU" << std::endl;
+	
+	return;
 }

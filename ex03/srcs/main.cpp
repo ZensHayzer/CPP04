@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 21:56:58 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/06 03:33:58 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/27 18:08:52 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int main()
 
     Shanley.unequip(0);
     Shanley.printInventory();
-
 
     ICharacter *bob = new Character("bob");
     Shanley.use(2, *bob);

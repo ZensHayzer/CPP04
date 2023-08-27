@@ -6,13 +6,13 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 01:45:21 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/29 12:35:40 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/27 16:54:19 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat(): WrongAnimal("WrongCat", "MIAOUUUUUUUUUUU *g menti* !")	{
+WrongCat::WrongCat(): WrongAnimal("WrongCat")	{
 	std::cout << "You create a WrongCat *g menti* !" << std::endl;
 	
 	return;
@@ -20,7 +20,8 @@ WrongCat::WrongCat(): WrongAnimal("WrongCat", "MIAOUUUUUUUUUUU *g menti* !")	{
 
 WrongCat::WrongCat(const WrongCat & src)	{
 	std::cout << "You copied a WrongCat *g menti* !" << std::endl;
-	*this = src;
+	if (this != &src)
+		*this = src;
 	
 	return;
 }
@@ -34,7 +35,12 @@ WrongCat::~WrongCat()	{
 WrongCat	&WrongCat::operator=(const WrongCat & src)	{
 	if (this != &src)	{
 		_type = src._type;
-		_sound = src._sound;
 	}
 	return (*this);
+}
+
+void	WrongCat::makeSound() const	{
+	std::cout << "MIAOUUUUUUUUUUU *g menti* !" << std::endl;
+	
+	return;
 }

@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:12:19 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/08/05 22:20:43 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/27 17:51:32 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class AMateria
 	public:
 		AMateria();
 		AMateria(std::string const & type);
+		AMateria(AMateria const & src);
 		virtual ~AMateria();
 		
 		AMateria	&operator=(const AMateria & src);

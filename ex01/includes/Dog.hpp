@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 00:48:14 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/30 10:23:57 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/27 16:25:40 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ class Dog : public Animal	{
 		~Dog();
 		
 		Dog &operator=(const Dog & src);
-		// virtual Animal &operator=(const Animal & src);
+		virtual Animal &operator=(const Animal & src);
 
 		virtual Brain	*getBrain() const;
+		virtual void	makeSound()	const;
 		
 	private:
 		Brain	*_brain;

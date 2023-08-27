@@ -6,25 +6,19 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 00:36:40 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/29 12:33:34 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/27 16:55:32 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(): _type("Urluberlue"), _sound("This \"thing\" don't really talk that much ...")	{
+Animal::Animal(): _type("Urluberlue") 	{
 	std::cout << "You created an animal !" << std::endl;
 
 	return;
 }
 
-Animal::Animal(std::string type): _type(type), _sound("This \"thing\" don't really talk that much ...")	{
-	std::cout << "You created an animal !" << std::endl;
-	
-	return;
-}
-
-Animal::Animal(std::string type, std::string sound): _type(type), _sound(sound)	{
+Animal::Animal(std::string type): _type(type) 	{
 	std::cout << "You created an animal !" << std::endl;
 	
 	return;
@@ -32,7 +26,8 @@ Animal::Animal(std::string type, std::string sound): _type(type), _sound(sound)	
 
 Animal::Animal(const Animal & src)	{
 	std::cout << "You copied an animal !" << std::endl;
-	*this = src;
+	if (this != &src)
+		*this = src;
 	
 	return;
 }
@@ -44,8 +39,10 @@ Animal::~Animal()	{
 }
 
 Animal	&Animal::operator=(const Animal & src)	{
-	_type = src._type;
-	_sound = src._type;
+	if (this != &src)	{
+		_type = src._type;
+	}
+	
 	return *this;
 }
 
@@ -54,7 +51,7 @@ std::string	Animal::getType() const	{
 }
 
 void	Animal::makeSound() const	{
-	std::cout << _sound << std::endl;
+	std::cout << "This \"thing\" don't really talk that much ..." << std::endl;
 	
 	return;
 }

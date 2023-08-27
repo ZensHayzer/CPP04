@@ -6,13 +6,13 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 00:48:37 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/29 12:34:23 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/27 16:52:12 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(): Animal("Dog", "WOUAFFFFFFF")	{
+Dog::Dog(): Animal("Dog")	{
 	std::cout << "You create a dog !" << std::endl;
 	
 	return;
@@ -20,7 +20,8 @@ Dog::Dog(): Animal("Dog", "WOUAFFFFFFF")	{
 
 Dog::Dog(const Dog & src)	{
 	std::cout << "You copied a dog !" << std::endl;
-	*this = src;
+	if (this != &src)
+		*this = src;
 	
 	return;
 }
@@ -34,7 +35,12 @@ Dog::~Dog()	{
 Dog	&Dog::operator=(const Dog & src)	{
 	if (this != &src)	{
 		_type = src._type;
-		_sound = src._sound;
 	}
 	return (*this);
+}
+
+void	Dog::makeSound() const	{
+	std::cout << "WOUAFFFFFFF" << std::endl;
+	
+	return;
 }

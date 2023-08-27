@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 01:43:30 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/30 10:11:42 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/27 17:32:26 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class WrongAnimal	{
 	
 	public:
 		WrongAnimal();
-		WrongAnimal(std::string type, std::string sound);
+		WrongAnimal(std::string type);
 		WrongAnimal(const WrongAnimal & src);
 		~WrongAnimal();
 		WrongAnimal &operator=(const WrongAnimal & src);
@@ -31,7 +31,6 @@ class WrongAnimal	{
 		
 	protected:
 		std::string	_type;
-		std::string _sound;
 };
 
 

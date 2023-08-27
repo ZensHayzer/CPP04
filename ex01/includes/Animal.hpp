@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 00:28:15 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/07/29 12:56:37 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/27 17:13:27 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Animal	{
 	public:
 		Animal();
 		Animal(std::string type);
-		Animal(std::string type, std::string sound);
 		Animal(const Animal & src);
 		
 		virtual ~Animal();
@@ -30,12 +29,12 @@ class Animal	{
 		virtual Brain	*getBrain() const = 0;
 		
 		std::string	getType() const;
+		std::string getSound() const;
 
-		void	makeSound()	const;
+		virtual void	makeSound()	const;
 		
 	protected:
 		std::string	_type;
-		std::string	_sound;
 };
 
 #endif
